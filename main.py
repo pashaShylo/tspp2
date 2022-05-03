@@ -2,12 +2,14 @@ from student import Student
 
 def get_result(students):
     result = []
+
     for student in students:
-        flag = 0
-        for grade in student.grades:
-            if (grade == 3):
-                flag += 1
-        if (flag == 1):
+        flag = False
+        for i in student.grades:
+            if i == 2:
+                flag = True
+                break
+        if flag:
             result.append(student)
 
     return result
