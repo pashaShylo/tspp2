@@ -5,10 +5,13 @@ def get_result(students):
     for student in students:
         flag = True
 
-        for i in student.grades:
-            if i < 5:
-                flag = False
-                break
+        if student.grades.count(4) == 1:
+            for grade in student.grades:
+                if grade < 4:
+                    flag = False
+                    break
+        else:
+            flag = False
 
         if flag:
             result.append(student)
