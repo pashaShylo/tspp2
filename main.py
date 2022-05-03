@@ -2,15 +2,11 @@ from student import Student
 
 def get_result(students):
     result = []
+
     for student in students:
         flag = True
 
-        if student.grades.count(4) == 1:
-            for grade in student.grades:
-                if grade < 4:
-                    flag = False
-                    break
-        else:
+        if student.grades.count(3):
             flag = False
 
         if flag:
